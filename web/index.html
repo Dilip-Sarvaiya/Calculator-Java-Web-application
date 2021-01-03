@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Calculator App | Dilip Sarvaiya</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                 $("form").submit(function(){
+                      var x = $("input[type = 'radio']:checked");  
+                     if(x.length>0)  
+                     { 
+                         return true;     
+                     }  
+                     else {  
+                            alert("Please select operation");
+                            return false;  
+                     }  
+             });
+            });
+        </script>
+</head>
+<body> 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary"><font color='white'><h2>Calculator</h2></font></nav>
+     <table>
+    <tr>
+
+      <td>
+     <div class="container">
+<form action="CalculatorServlet" method="post" >
+    <div class="form-group">
+              <label for="name">Enter First Number</label>
+              <input size="40" type="text" class="form-control" name="txtN1" />
+    </div>
+     <div class="form-group">
+              <label for="name">Enter Second Number</label>
+              <input size="40" type="text" class="form-control" name="txtN2" />
+    </div>
+     <div class="form-group">   
+                <label for="gender">Select an Operation</label>
+                <input type="radio" value="+" name="opr" /> ADDTION
+                <input type="radio" value="*" name="opr" /> MULTIPLY
+                <input type="radio" value="/" name="opr" /> DIVIDE
+                <input type="radio" value="-" name="opr" /> SUBTRACTION
+    </div>
+    <div class="form-group">   
+        <input class="btn btn-default" type="reset">
+        <input class="btn btn-primary" type="submit" value="Calculate" >
+    </div>
+</form>
+     </div>
+      </td>
+    </tr>
+     </table>
+</body>
+</html>
